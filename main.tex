@@ -1,0 +1,168 @@
+
+\documentclass[a4paper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+\usepackage{CJK}
+%\usepackage{url}
+\usepackage{hyperref}
+\usepackage{tabu}
+\usepackage{eurosym}
+\usepackage{geometry}
+\geometry{top=0.4 cm, bottom=0.4 cm, left=0.4cm , right=0.4 cm}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{2pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.7}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.8}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+%\setlength{\evensidemargin}{0.9in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.9in}
+%\setlength{\paperheight}{11in}
+%\setlength{\paperwidth}{8.5in}
+%\setlength{\tabcolsep}{0in}
+%\setlength{\textheight}{9.5in}
+%\setlength{\textwidth}{7in}
+%\setlength{\topmargin}{-0.3in}
+%\setlength{\topskip}{0in}
+%\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{-12pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[7.7in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-13pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.4in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+\begin{center}
+\begin{tabu*} to \textwidth {  X[l]  X[c]  X[r]  }
+%{8in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large WHANNOU Brian} &  & bwhannou@outlook.fr\\
+Qualified Actuary, FRM I &  &  {\href{https://www.linkedin.com/in/bwhannou/}{www.linkedin.com/in/bwhannou/}}\\
+ &  & ~~~~+41 7 82 29 04 69 \\
+
+\end{tabu*}
+\\
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Professional experiences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item \ressubheading{Associate Director: Risk modeling and Analytics Specialist}{September 2021 -}{UBS}{Lausanne, Suisse}
+{\small
+\begin{itemize}
+	\item{Developed, monitored credit risk models for various corporate portfolios (Financial Institutions, SME, Ultra Wealthy Individual...)}
+	\item{Ensured models compliance with various regulatory frameworks (FINMA, ECB and FED)}
+	
+\end{itemize}}
+\item \ressubheading{Consultant: Risk Model Developer}{August 2020 -}{Optima Economics}{Cotonou, Bénin}
+{\small
+\begin{itemize}
+	\item{Developed credit risk models and conducted ad-hoc statistical analyses.}
+	
+\end{itemize}}
+\item \ressubheading{Senior associate: Data scientist (Financial Risk Management)}{September 2018 - August 2021}{KPMG}{France, Netherlands, Ivory Cost}
+{
+\begin{itemize}
+	\item{\textbf{Credit Risk}: Expertise in Python and SAS programming to develop and deploy scoring models based on supervised learning algorithms in the IFRS9 framework ; Carried out an in-depth review of Credit risk (LGD, PD and CCF) models in a Top tier European Financial Institution under the Targeted Review of Internal Models (TRIM); Interacted with credit business units to provide advice on model development.}
+	\item{\textbf{Assets Liabilities Management}: Improved the NII Stress-test exercise by reducing human interventions in the pipeline between data gathering and reporting; Developed a data-visualization tool; Developed and implemented a Model Risk Management methodology for ALM models.}
+	\end{itemize}
+
+\item \ressubheading{Quantitative analyst: Credit risk}{May 2016-August 2018}{Société Générale}{Paris, France}
+{\small
+\begin{itemize}
+	\item{Implemented a machine learning algorithm based on clustering to forecast future loss on unresolved defaults and presented the results to a panel of credit risk experts and professionals from European Financial Institutions.}
+\end{itemize}
+}
+
+\item \ressubheading{Quantitative analyst: Counterparty Credit Risk}{july 2015-September 2015}{Crédit Agricole CIB}{Paris, France}
+{\small
+\begin{itemize}
+	\item{Developed a simulation methodology to diffuse correlated risk factors (interest rate, exchange rate, inflation, stocks) using R and C++.}
+	
+\end{itemize}}
+}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+
+\item \ressubheading{\href{http://www.ensae.fr}{ENSAE Paristech}}{2013 - 2016}{Actuarial Science}{Paris, France}{\small
+\begin{itemize}
+	\resitem{life/non-life insurance : Regression for frequency (Poisson law) and severity (gamma, Pareto law), principle of provisioning (Chain ladder, IBNR), Survival model (Kaplan Meier, Cox Model).}
+	\resitem{Risk Management: Value-at-Risk and Expected Shortfall; Backtest and stresstest}
+	\resitem{Clustering and classification methods: random forest, logistic regression, LightGBM, Extreme values theory.}
+\end{itemize}}
+
+\item \ressubheading{University Paris VII}{2015 - 2016}{Master's degree Mathematical Statistics and Probability}{Paris, France}{\small
+\begin{itemize}
+	\resitem{Stochastics Processus applied to finance(Peter Tankov, PhD): Black-Scholes model, Vasicek model, delta-normal and full revaluation approaches for computing VaR.}
+	\resitem{Statistical learning (Stéphan Clemençon, PhD): Loss functions, Support Vector Machine.}
+\end{itemize}}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item \textbf{Software}\vspace{-8pt}{\small
+\begin{itemize}
+\item{\textbf{R} (Coursera); \textbf{Python} (IBM);}
+%	\item{C++,SQL, Octave, Excel, VBA, SAS, \LaTeX;}
+	\item{On my Github page, you can see some of the projects I have been working on (\href{https://github.com/BWhannou}{\textbf{https://github.com/BWhannou}})}
+\end{itemize}}
+\item \textbf{Languages}
+	\vspace{-8pt}
+	\begin{center}\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
+		\multicolumn{2}{c}{English \cftdotfill{\cftdotsep} Full professional proficiency }\\
+        \multicolumn{2}{c}{
+        \begin{CJK}{UTF8}{gbsn}
+中文 (普通话) \cftdotfill{\cftdotsep} 汉语水平考试二级
+\end{CJK}  }\\
+		\vphantom{E}
+\end{tabular*}
+\end{center}\vspace*{-20pt}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Hobbies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item Free athlete, half-marathons (Valencia, Paris(3$\times$), Madrid, Lisbon), Paris 20 kms (3$\times$), Paris marathon.
+\item Travel; reading (personal development books) and listening to podcasts (Seth Godin, Malcolm Gladwell).
+\end{itemize}
+
+\end{document}
