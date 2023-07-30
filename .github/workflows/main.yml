@@ -1,0 +1,11 @@
+stages:          # List of stages for jobs, and their order of execution
+  - compile
+
+compile_pdf:
+  stage: compile
+  image: tianon/latex
+  script:
+    - latexmk -pdf -pdflatex="xelatex -interaction=nonstopmode" -use-make main.tex
+  artifacts:
+    paths:
+      - main.pdf
