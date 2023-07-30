@@ -1,11 +1,17 @@
-stages:          # List of stages for jobs, and their order of execution
-  - compile
-
-compile_pdf:
-  stage: compile
-  image: tianon/latex
-  script:
-    - latexmk -pdf -pdflatex="xelatex -interaction=nonstopmode" -use-make main.tex
-  artifacts:
-    paths:
-      - main.pdf
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: main.pdf
